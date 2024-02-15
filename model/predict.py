@@ -9,7 +9,8 @@ classes = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९',
 
 def predict():
     predicted_string = ''
-    images = [img for img in os.listdir('./model/temp')]
+    images = sorted([img for img in os.listdir('./model/temp')])
+    #images = [img for img in os.listdir('./model/temp')]
     for img in images:
         test_img = cv2.imread(os.path.join('./model/temp', img))
         test_img  = cv2.resize(test_img, (28,28))
@@ -17,8 +18,8 @@ def predict():
         test_input = test_img.reshape((1,32,32,3))
         prob = model.predict(test_input)
         pred = prob.argmax(axis=-1)
-        print('Predicted as: ', classes[pred[0]])
         predicted_string = predicted_string + classes[pred[0]]
-        os.remove(os.path.join('./model/temp',img))
+        #os.remove(os.path.join('./model/temp',img))
     
+    print(predicted_string)
     return predicted_string
