@@ -3,7 +3,7 @@ import os
 import numpy as np
 import cv2
 
-model = tf.keras.models.load_model('./model/highaccuracymodel.keras')
+model = tf.keras.models.load_model('./model/highaccuracymodel.h5')
 
 classes = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९', 'अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ए', 'ऐ', 'ओ', 'औ', 'अं', 'अः', 'क', 'ख', 'ग', 'घ', 'ङ', 'च', 'छ', 'ज', 'झ', 'ञ', 'ट', 'ठ', 'ड', 'ढ', 'ण', 'त', 'थ', 'द', 'ध', 'न', 'प', 'फ', 'ब', 'भ', 'म', 'य', 'र', 'ल', 'व', 'श', 'ष', 'स', 'ह', 'क्ष', 'त्र', 'ज्ञ']
 
