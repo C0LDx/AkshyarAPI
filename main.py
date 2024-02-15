@@ -10,11 +10,11 @@ from model.predict import predict
 app = FastAPI()
 
 @app.post("/")
-async def ping():
+def ping():
     return {"connection": "OK"}
 
 @app.post("/predict")
-async def get_prediction(image_data: bytes = Body(..., media_type="image/png")):
+def get_prediction(image_data: bytes = Body(..., media_type="image/png")):
     try:
         img = Image.open(BytesIO(image_data)).convert('RGB')
         img = np.array(img)
