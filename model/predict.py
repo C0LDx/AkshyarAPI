@@ -19,7 +19,7 @@ def predict():
         prob = model.predict(test_input)
         pred = prob.argmax(axis=-1)
         predicted_string = predicted_string + classes[pred[0]]
-        #os.remove(os.path.join('./model/temp',img))
+        os.remove(os.path.join('./model/temp',img))
     
     print(predicted_string)
     return predicted_string
